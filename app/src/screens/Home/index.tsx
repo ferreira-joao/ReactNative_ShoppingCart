@@ -1,15 +1,14 @@
 import React from "react";
 
+import { MainHeader } from "../../components/MainHeader";
 import { MainCard } from "../../components/MainCard";
 
-import { Container, TitleHeader, Title, List } from "./styles";
+import { Container, List } from "./styles";
 
 export function Home() {
   return (
     <Container>
-      <TitleHeader>STORE</TitleHeader>
-
-      <Title>Our products:</Title>
+      <MainHeader />
 
       <List>
         <MainCard name="Sapato A" price="$250.00" />
