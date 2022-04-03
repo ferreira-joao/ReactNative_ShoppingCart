@@ -1,15 +1,29 @@
 import React from "react";
 
-import { Container, ProductImage, ProductName, ProductPrice } from "./styles";
+import {
+  Container,
+  DataContainer,
+  ProductImage,
+  ProductName,
+  ProductPrice,
+  AddButton,
+  AddButtonText,
+} from "./styles";
 
 export function MainCard() {
   return (
     <Container>
-      <ProductImage />
+      <DataContainer>
+        <ProductImage />
 
-      <ProductName>Sapato A</ProductName>
+        <ProductName numberOfLines={1}>Sapato A</ProductName>
 
-      <ProductPrice>$250.00</ProductPrice>
+        <ProductPrice numberOfLines={1}>$250.00</ProductPrice>
+      </DataContainer>
+
+      <AddButton>
+        <AddButtonText>Add</AddButtonText>
+      </AddButton>
     </Container>
   );
 }
