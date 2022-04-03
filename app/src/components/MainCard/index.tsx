@@ -23,7 +23,7 @@ export function MainCard({ name, price }: IMainCard) {
 
         <ProductName numberOfLines={1}>{name}</ProductName>
 
-        <ProductPrice numberOfLines={1}>{price}</ProductPrice>
+        <ProductPrice numberOfLines={1}>$ {price}</ProductPrice>
       </DataContainer>
 
       <AddButton>

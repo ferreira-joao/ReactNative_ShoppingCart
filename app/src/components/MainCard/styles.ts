@@ -3,7 +3,8 @@ import styled from "styled-components/native";
 import theme from "../../global/theme";
 
 export const Container = styled.View`
-  width: 50%;
+  flex: 0.5;
+  margin: 5px;
   border-radius: 10px;
   background-color: #fff;
 `;

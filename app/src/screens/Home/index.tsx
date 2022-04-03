@@ -1,18 +1,24 @@
 import React from "react";
+import { FlatList } from "react-native";
 
 import { MainHeader } from "../../components/MainHeader";
-import { MainCard } from "../../components/MainCard";
+import { renderMainCard } from "../../utils/renderMainCard";
 
-import { Container, List } from "./styles";
+import { Container } from "./styles";
+
+import { items } from "./data";
 
 export function Home() {
   return (
     <Container>
-      <MainHeader />
-
-      <List>
-        <MainCard name="Sapato A" price="$250.00" />
-      </List>
+      <FlatList
+        data={items}
+        numColumns={2}
+        renderItem={renderMainCard}
+        keyExtractor={(item) => item.id.toString()}
+        showsVerticalScrollIndicator={false}
+        ListHeaderComponent={<MainHeader />}
+      />
     </Container>
   );
 }
