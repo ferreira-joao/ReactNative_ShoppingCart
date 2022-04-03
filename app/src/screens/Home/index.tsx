@@ -12,7 +12,7 @@ export function Home() {
       <Title>Our products:</Title>
 
       <List>
-        <MainCard />
+        <MainCard name="Sapato A" price="$250.00" />
       </List>
     </Container>
   );

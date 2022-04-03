@@ -10,15 +10,20 @@ import {
   AddButtonText,
 } from "./styles";
 
-export function MainCard() {
+interface IMainCard {
+  name: string;
+  price: string;
+}
+
+export function MainCard({ name, price }: IMainCard) {
   return (
     <Container>
       <DataContainer>
         <ProductImage />
 
-        <ProductName numberOfLines={1}>Sapato A</ProductName>
+        <ProductName numberOfLines={1}>{name}</ProductName>
 
-        <ProductPrice numberOfLines={1}>$250.00</ProductPrice>
+        <ProductPrice numberOfLines={1}>{price}</ProductPrice>
       </DataContainer>
 
       <AddButton>
