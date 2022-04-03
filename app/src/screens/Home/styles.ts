@@ -21,3 +21,8 @@ export const Title = styled.Text`
   color: ${theme.colors.text};
   font-family: ${theme.fonts.bold};
 `;
+
+export const List = styled.View`
+  width: 100%;
+  margin-top: 10px;
+`;

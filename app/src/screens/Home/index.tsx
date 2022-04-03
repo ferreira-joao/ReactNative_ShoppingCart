@@ -1,6 +1,8 @@
 import React from "react";
 
-import { Container, Title, TitleHeader } from "./styles";
+import { MainCard } from "../../components/MainCard";
+
+import { Container, TitleHeader, Title, List } from "./styles";
 
 export function Home() {
   return (
@@ -8,6 +10,10 @@ export function Home() {
       <TitleHeader>STORE</TitleHeader>
 
       <Title>Our products:</Title>
+
+      <List>
+        <MainCard />
+      </List>
     </Container>
   );
 }
