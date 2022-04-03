@@ -3,6 +3,7 @@ export default {
     background: "#F2F2F2",
     primary: "#580af5",
     secondary: "#9b6cf9",
+    text: "#999999",
     confirm: "#00cc44",
     cancel: "#CD5C5C",
   },

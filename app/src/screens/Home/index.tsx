@@ -1,11 +1,13 @@
 import React from "react";
 
-import { Container, Title } from "./styles";
+import { Container, Title, TitleHeader } from "./styles";
 
 export function Home() {
   return (
     <Container>
-      <Title>HOME</Title>
+      <TitleHeader>STORE</TitleHeader>
+
+      <Title>Our products:</Title>
     </Container>
   );
 }
