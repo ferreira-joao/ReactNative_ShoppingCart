@@ -37,7 +37,8 @@ export const ProductPrice = styled.Text`
 
 export const AddButton = styled.TouchableOpacity`
   padding: 10px;
-  border-radius: 8px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
   background-color: ${theme.colors.primary};
 `;
 

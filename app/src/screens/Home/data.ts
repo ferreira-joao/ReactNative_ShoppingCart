@@ -19,4 +19,24 @@ export const items = [
     name: "Sapato D",
     price: "310.00",
   },
+  {
+    id: 5,
+    name: "Sapato D",
+    price: "310.00",
+  },
+  {
+    id: 6,
+    name: "Sapato D",
+    price: "310.00",
+  },
+  {
+    id: 7,
+    name: "Sapato D",
+    price: "310.00",
+  },
+  {
+    id: 8,
+    name: "Sapato D",
+    price: "310.00",
+  },
 ];
