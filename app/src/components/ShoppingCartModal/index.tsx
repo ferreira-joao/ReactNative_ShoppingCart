@@ -2,6 +2,7 @@ import React from "react";
 import { Modal } from "react-native";
 
 import Icon from "react-native-vector-icons/Ionicons";
+import { ShoppingCard } from "../ShoppingCard";
 
 import { Container, Header, Title, CloseButton } from "./styles";
 
@@ -21,6 +22,8 @@ export function ShoppingCartModal({ visible, onClose }: IShoppingCartModal) {
             <Icon name="close-outline" size={50} color="#000" />
           </CloseButton>
         </Header>
+
+        <ShoppingCard />
       </Container>
     </Modal>
   );
