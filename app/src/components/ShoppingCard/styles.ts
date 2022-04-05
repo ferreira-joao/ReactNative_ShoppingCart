@@ -3,11 +3,12 @@ import styled from "styled-components/native";
 import theme from "../../global/theme";
 
 export const Container = styled.View.attrs({ elevation: 5 })`
+  width: 100%;
   padding: 10px;
   border-radius: 10px;
   flex-direction: row;
+  justify-content: space-between;
   background-color: #fff;
-  width: 100%;
 `;
 
 export const ContainerData = styled.View`

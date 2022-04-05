@@ -1,5 +1,7 @@
 import React from "react";
 
+import { QuantityCounter } from "../QuantityCounter";
+
 import {
   Container,
   ContainerData,
@@ -21,6 +23,8 @@ export function ShoppingCard() {
           <ProductPrice>$ 250.00</ProductPrice>
         </ContainerTexts>
       </ContainerData>
+
+      <QuantityCounter quantity={1} />
     </Container>
   );
 }
