@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { FlatList } from "react-native";
 
 import { MainHeader } from "../../components/MainHeader";
 import { renderMainCard } from "../../utils/renderMainCard";
 import { FixedButton } from "../../components/FixedButton";
+import { ShoppingCartModal } from "../../components/ShoppingCartModal";
 
 import { Container } from "./styles";
 
 import { items } from "./data";
 
 export function Home() {
+  const [isVisible, setVisible] = useState(false);
+
+  function handleModal() {
+    setVisible(!isVisible);
+  }
+
   return (
     <Container>
       <FlatList
@@ -22,7 +29,9 @@ export function Home() {
         ListHeaderComponent={<MainHeader />}
       />
 
-      <FixedButton />
+      <ShoppingCartModal visible={isVisible} />
+
+      <FixedButton onPress={handleModal} />
     </Container>
   );
 }

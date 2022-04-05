@@ -2,11 +2,12 @@ import styled from "styled-components/native";
 
 import theme from "../../global/theme";
 
-export const Container = styled.View`
+export const Container = styled.View.attrs({ elevation: 5 })`
   flex: 0.5;
   margin: 5px;
-  border-radius: 10px;
   background-color: #fff;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 `;
 
 export const DataContainer = styled.View`
