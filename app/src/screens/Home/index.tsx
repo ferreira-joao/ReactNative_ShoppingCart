@@ -29,7 +29,7 @@ export function Home() {
         ListHeaderComponent={<MainHeader />}
       />
 
-      <ShoppingCartModal visible={isVisible} />
+      <ShoppingCartModal visible={isVisible} onClose={handleModal} />
 
       <FixedButton onPress={handleModal} />
     </Container>
