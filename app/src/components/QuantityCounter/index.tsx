@@ -4,22 +4,18 @@ import { Container, ActionButton, Counter } from "./styles";
 import Icon from "react-native-vector-icons/Ionicons";
 import { Alert } from "react-native";
 
-interface IQuantityCounter {
-  quantity: number;
-}
-
-export function QuantityCounter({ quantity }: IQuantityCounter) {
-  const [count, setCount] = useState(0);
+export function QuantityCounter() {
+  const [count, setCount] = useState(1);
 
   function handleAdd() {
-    setCount(quantity++);
+    setCount(count + 1);
   }
 
   function handleRemove() {
-    if (quantity === 0) {
+    if (count === 1) {
       Alert.alert("Can't subtract.");
     } else {
-      setCount(quantity--);
+      setCount(count - 1);
     }
   }
 
