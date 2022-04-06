@@ -4,6 +4,7 @@ import { Modal, FlatList } from "react-native";
 import { ShoppingCartHeader } from "../ShoppingCartHeader";
 import { renderShoppingCard } from "../../utils/renderShoppingCard";
 import { CleanButton } from "../CleanButton";
+import { CheckOutArea } from "../CheckOutArea";
 
 import { Container } from "./styles";
 
@@ -23,10 +24,12 @@ export function ShoppingCartModal({ visible, onClose }: IShoppingCartModal) {
           renderItem={renderShoppingCard}
           keyExtractor={(item) => item.id.toString()}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{ padding: 8 }}
+          contentContainerStyle={{ padding: 20 }}
           ListHeaderComponent={<ShoppingCartHeader onClose={onClose} />}
           ListFooterComponent={<CleanButton />}
         />
+
+        <CheckOutArea />
       </Container>
     </Modal>
   );
