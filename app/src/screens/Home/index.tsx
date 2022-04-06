@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FlatList } from "react-native";
 
 import { MainHeader } from "../../components/MainHeader";
@@ -9,9 +9,14 @@ import { ShoppingCartModal } from "../../components/ShoppingCartModal";
 import { Container } from "./styles";
 
 import { items } from "./data";
+import { getStore } from "../../utils/apiCalls";
 
 export function Home() {
   const [isVisible, setVisible] = useState(false);
+
+  useEffect(() => {
+    getStore();
+  }, []);
 
   function handleModal() {
     setVisible(!isVisible);
