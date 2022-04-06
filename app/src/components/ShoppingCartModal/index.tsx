@@ -3,6 +3,7 @@ import { Modal, FlatList } from "react-native";
 
 import { ShoppingCartHeader } from "../ShoppingCartHeader";
 import { renderShoppingCard } from "../../utils/renderShoppingCard";
+import { CleanButton } from "../CleanButton";
 
 import { Container } from "./styles";
 
@@ -24,6 +25,7 @@ export function ShoppingCartModal({ visible, onClose }: IShoppingCartModal) {
           showsVerticalScrollIndicator={false}
           contentContainerStyle={{ padding: 8 }}
           ListHeaderComponent={<ShoppingCartHeader onClose={onClose} />}
+          ListFooterComponent={<CleanButton />}
         />
       </Container>
     </Modal>
