@@ -6,6 +6,7 @@ export const Container = styled.View.attrs({ elevation: 5 })`
   width: 100%;
   padding: 10px;
   border-radius: 10px;
+  margin-bottom: 10px;
   flex-direction: row;
   justify-content: space-between;
   background-color: #fff;

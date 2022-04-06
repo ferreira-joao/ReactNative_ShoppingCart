@@ -23,7 +23,9 @@ export function ShoppingCartModal({ visible, onClose }: IShoppingCartModal) {
           </CloseButton>
         </Header>
 
-        <ShoppingCard />
+        <ShoppingCard name="Sapato A" price="250.00" />
+        <ShoppingCard name="Sapato B" price="300.00" />
+        <ShoppingCard name="Sapato C" price="280.00" />
       </Container>
     </Modal>
   );

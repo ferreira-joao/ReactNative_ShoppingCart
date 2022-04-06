@@ -11,20 +11,25 @@ import {
   ProductPrice,
 } from "./styles";
 
-export function ShoppingCard() {
+interface IShoppingCard {
+  name: string;
+  price: string;
+}
+
+export function ShoppingCard({ name, price }: IShoppingCard) {
   return (
     <Container>
       <ContainerData>
         <ProductImage />
 
         <ContainerTexts>
-          <ProductName>Sapato A</ProductName>
+          <ProductName>{name}</ProductName>
 
-          <ProductPrice>$ 250.00</ProductPrice>
+          <ProductPrice>$ {price}</ProductPrice>
         </ContainerTexts>
       </ContainerData>
 
-      <QuantityCounter quantity={1} />
+      <QuantityCounter />
     </Container>
   );
 }
