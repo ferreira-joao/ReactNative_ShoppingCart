@@ -1,10 +1,12 @@
 import React from "react";
-import { Modal } from "react-native";
+import { Modal, FlatList } from "react-native";
 
-import Icon from "react-native-vector-icons/Ionicons";
-import { ShoppingCard } from "../ShoppingCard";
+import { ShoppingCartHeader } from "../ShoppingCartHeader";
+import { renderShoppingCard } from "../../utils/renderShoppingCard";
 
-import { Container, Header, Title, CloseButton } from "./styles";
+import { Container } from "./styles";
+
+import { items } from "./data";
 
 interface IShoppingCartModal {
   visible: boolean;
@@ -15,17 +17,14 @@ export function ShoppingCartModal({ visible, onClose }: IShoppingCartModal) {
   return (
     <Modal animationType="slide" visible={visible}>
       <Container>
-        <Header>
-          <Title>Shopping Cart</Title>
-
-          <CloseButton onPress={onClose}>
-            <Icon name="close-outline" size={50} color="#000" />
-          </CloseButton>
-        </Header>
-
-        <ShoppingCard name="Sapato A" price="250.00" />
-        <ShoppingCard name="Sapato B" price="300.00" />
-        <ShoppingCard name="Sapato C" price="280.00" />
+        <FlatList
+          data={items}
+          renderItem={renderShoppingCard}
+          keyExtractor={(item) => item.id.toString()}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{ padding: 8 }}
+          ListHeaderComponent={<ShoppingCartHeader onClose={onClose} />}
+        />
       </Container>
     </Modal>
   );

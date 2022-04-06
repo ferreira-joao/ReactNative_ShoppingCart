@@ -6,6 +6,6 @@ interface IrenderMainCard {
   item: { name: string; price: string };
 }
 
-export function renderMainCard({ item }: IrenderMainCard) {
+export function renderShoppingCard({ item }: IrenderMainCard) {
   return <ShoppingCard name={item.name} price={item.price} />;
 }
