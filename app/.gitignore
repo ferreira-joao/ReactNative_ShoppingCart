@@ -60,5 +60,8 @@ buck-out/
 /ios/Pods/
 /vendor/bundle/
 
-#prettier
+# prettier
 .prettierrc
+
+# Enviroment Variables
+.env

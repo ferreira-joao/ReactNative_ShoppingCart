@@ -8,14 +8,20 @@ import { ShoppingCartModal } from "../../components/ShoppingCartModal";
 
 import { Container } from "./styles";
 
-import { items } from "./data";
 import { getStore } from "../../utils/apiCalls";
 
 export function Home() {
   const [isVisible, setVisible] = useState(false);
+  const [shop, setShop] = useState();
+
+  const handleShopCall = async () => {
+    const store = await getStore();
+
+    setShop(store);
+  };
 
   useEffect(() => {
-    getStore();
+    handleShopCall();
   }, []);
 
   function handleModal() {
@@ -25,7 +31,7 @@ export function Home() {
   return (
     <Container>
       <FlatList
-        data={items}
+        data={shop}
         numColumns={2}
         renderItem={renderMainCard}
         keyExtractor={(item) => item.id.toString()}
