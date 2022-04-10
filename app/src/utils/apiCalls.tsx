@@ -1,7 +1,7 @@
 import api from "../services/api";
 
-export async function getStore() {
-  return await api
+export function getStore() {
+  return api
     .get("/store")
     .then((res) => {
       return res.data;

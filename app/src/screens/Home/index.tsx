@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FlatList } from "react-native";
+import { ActivityIndicator, FlatList } from "react-native";
 
 import { MainHeader } from "../../components/MainHeader";
 import { renderMainCard } from "../../utils/renderMainCard";
@@ -13,11 +13,14 @@ import { getStore } from "../../utils/apiCalls";
 export function Home() {
   const [isVisible, setVisible] = useState(false);
   const [shop, setShop] = useState();
+  const [loading, setLoading] = useState(true);
 
   const handleShopCall = async () => {
     const store = await getStore();
 
     setShop(store);
+
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -30,15 +33,23 @@ export function Home() {
 
   return (
     <Container>
-      <FlatList
-        data={shop}
-        numColumns={2}
-        renderItem={renderMainCard}
-        keyExtractor={(item) => item.id.toString()}
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ padding: 8 }}
-        ListHeaderComponent={<MainHeader />}
-      />
+      {loading ? (
+        <ActivityIndicator
+          style={{ marginTop: 20 }}
+          size={"large"}
+          color="#000"
+        />
+      ) : (
+        <FlatList
+          data={shop}
+          numColumns={2}
+          renderItem={renderMainCard}
+          keyExtractor={(item) => item.id.toString()}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{ padding: 8 }}
+          ListHeaderComponent={<MainHeader />}
+        />
+      )}
 
       <ShoppingCartModal visible={isVisible} onClose={handleModal} />
 
