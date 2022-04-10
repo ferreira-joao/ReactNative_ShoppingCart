@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { ActivityIndicator, FlatList } from "react-native";
 
 import { MainHeader } from "../../components/MainHeader";
@@ -10,10 +10,14 @@ import { Container } from "./styles";
 
 import { getStore } from "../../utils/apiCalls";
 
+import { ShoppingCartContext } from "../../contexts/ShoppingCartContext";
+
 export function Home() {
   const [isVisible, setVisible] = useState(false);
   const [shop, setShop] = useState();
   const [loading, setLoading] = useState(true);
+
+  const [cart, setCart] = useContext(ShoppingCartContext);
 
   const handleShopCall = async () => {
     const store = await getStore();

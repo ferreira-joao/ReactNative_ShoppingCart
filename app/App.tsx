@@ -2,8 +2,14 @@ import React from "react";
 
 import { Home } from "./src/screens/Home";
 
+import { ShoppingCartContextProvider } from "./src/contexts/ShoppingCartContext";
+
 function App() {
-  return <Home />;
+  return (
+    <ShoppingCartContextProvider>
+      <Home />
+    </ShoppingCartContextProvider>
+  );
 }
 
 export default App;
