@@ -17,7 +17,7 @@ export function Home() {
   const [shop, setShop] = useState();
   const [loading, setLoading] = useState(true);
 
-  const [cart, setCart] = useContext(ShoppingCartContext);
+  const [cart] = useContext(ShoppingCartContext);
 
   const handleShopCall = async () => {
     const store = await getStore();
@@ -57,7 +57,7 @@ export function Home() {
 
       <ShoppingCartModal visible={isVisible} onClose={handleModal} />
 
-      <FixedButton onPress={handleModal} />
+      {cart.length > 0 && <FixedButton onPress={handleModal} />}
     </Container>
   );
 }

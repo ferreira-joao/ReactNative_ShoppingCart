@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import { ShoppingCartContext } from "../../contexts/ShoppingCartContext";
 
 import {
   Container,
@@ -11,11 +13,18 @@ import {
 } from "./styles";
 
 interface IMainCard {
+  product: {};
   name: string;
   price: string;
 }
 
-export function MainCard({ name, price }: IMainCard) {
+export function MainCard({ product, name, price }: IMainCard) {
+  const [cart, setCart] = useContext(ShoppingCartContext);
+
+  function handleAdd() {
+    setCart([...cart, product]);
+  }
+
   return (
     <Container>
       <DataContainer>
@@ -26,7 +35,7 @@ export function MainCard({ name, price }: IMainCard) {
         <ProductPrice numberOfLines={1}>$ {price}</ProductPrice>
       </DataContainer>
 
-      <AddButton>
+      <AddButton onPress={handleAdd}>
         <AddButtonText>Add</AddButtonText>
       </AddButton>
     </Container>

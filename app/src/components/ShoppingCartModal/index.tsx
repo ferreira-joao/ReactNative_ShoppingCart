@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Modal, FlatList } from "react-native";
 
 import { ShoppingCartHeader } from "../ShoppingCartHeader";
@@ -10,17 +10,21 @@ import { Container } from "./styles";
 
 import { items } from "./data";
 
+import { ShoppingCartContext } from "../../contexts/ShoppingCartContext";
+
 interface IShoppingCartModal {
   visible: boolean;
   onClose: () => void;
 }
 
 export function ShoppingCartModal({ visible, onClose }: IShoppingCartModal) {
+  const [cart] = useContext(ShoppingCartContext);
+
   return (
     <Modal animationType="slide" visible={visible}>
       <Container>
         <FlatList
-          data={items}
+          data={cart}
           renderItem={renderShoppingCard}
           keyExtractor={(item) => item.id.toString()}
           showsVerticalScrollIndicator={false}

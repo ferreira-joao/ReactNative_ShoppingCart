@@ -3,7 +3,7 @@ import React from "react";
 import { ShoppingCard } from "../components/ShoppingCard";
 
 interface IrenderMainCard {
-  item: { name: string; price: string };
+  item: { id: number; name: string; price: string };
 }
 
 export function renderShoppingCard({ item }: IrenderMainCard) {
