@@ -22,7 +22,9 @@ export function MainCard({ product, name, price }: IMainCard) {
   const [cart, setCart] = useContext(ShoppingCartContext);
 
   function handleAdd() {
-    setCart([...cart, product]);
+    if (!cart.includes(product)) {
+      setCart([...cart, product]);
+    }
   }
 
   return (

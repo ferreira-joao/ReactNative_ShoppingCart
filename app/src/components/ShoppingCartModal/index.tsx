@@ -8,8 +8,6 @@ import { CheckOutArea } from "../CheckOutArea";
 
 import { Container } from "./styles";
 
-import { items } from "./data";
-
 import { ShoppingCartContext } from "../../contexts/ShoppingCartContext";
 
 interface IShoppingCartModal {
