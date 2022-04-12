@@ -7,7 +7,7 @@ interface IrenderMainCard {
     id: number;
     product: {};
     name: string;
-    quantity: number;
+    stock: number;
     price: string;
   };
 }
@@ -17,7 +17,7 @@ export function renderMainCard({ item }: IrenderMainCard) {
     <MainCard
       product={item}
       name={item.name}
-      quantity={item.quantity}
+      stock={item.stock}
       price={item.price}
     />
   );

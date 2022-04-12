@@ -16,11 +16,11 @@ import {
 interface IMainCard {
   product: {};
   name: string;
-  quantity: number;
+  stock: number;
   price: string;
 }
 
-export function MainCard({ product, name, quantity, price }: IMainCard) {
+export function MainCard({ product, name, stock, price }: IMainCard) {
   const [cart, setCart] = useContext(ShoppingCartContext);
 
   function handleAdd() {
@@ -36,7 +36,7 @@ export function MainCard({ product, name, quantity, price }: IMainCard) {
 
         <ProductName numberOfLines={1}>{name}</ProductName>
 
-        <ProductQuantity>In stock: {quantity}</ProductQuantity>
+        <ProductQuantity>In stock: {stock}</ProductQuantity>
 
         <ProductPrice numberOfLines={1}>$ {price}</ProductPrice>
       </DataContainer>

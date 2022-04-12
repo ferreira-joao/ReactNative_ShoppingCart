@@ -4,25 +4,25 @@
       "id": 1,
       "name": "Shoe",
       "price": 80.0,
-      "quantity": 10
+      "stock": 10
     },
     {
       "id": 2,
       "name": "T-shirt",
       "price": 60.0,
-      "quantity": 15
+      "stock": 15
     },
     {
       "id": 3,
       "name": "Cap",
       "price": 10.0,
-      "quantity": 20
+      "stock": 20
     },
     {
       "id": 4,
       "name": "Dress",
       "price": 100.5,
-      "quantity": 5
+      "stock": 5
     }
   ]
 }
