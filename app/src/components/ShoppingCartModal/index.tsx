@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Modal, FlatList } from "react-native";
 
 import { ShoppingCartHeader } from "../ShoppingCartHeader";
@@ -16,7 +16,17 @@ interface IShoppingCartModal {
 }
 
 export function ShoppingCartModal({ visible, onClose }: IShoppingCartModal) {
+  const [total, setTotal] = useState(0);
   const [cart] = useContext(ShoppingCartContext);
+
+  useEffect(() => {
+    const sumTotal = cart.reduce(
+      (acc: any, obj: { price: any }) => acc + obj.price,
+      0
+    );
+
+    setTotal(sumTotal);
+  }, [cart]);
 
   return (
     <Modal animationType="slide" visible={visible}>
@@ -31,7 +41,7 @@ export function ShoppingCartModal({ visible, onClose }: IShoppingCartModal) {
           ListFooterComponent={<CleanButton />}
         />
 
-        <CheckOutArea />
+        <CheckOutArea total={total} />
       </Container>
     </Modal>
   );

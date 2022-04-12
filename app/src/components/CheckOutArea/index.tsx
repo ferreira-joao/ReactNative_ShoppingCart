@@ -2,10 +2,14 @@ import React from "react";
 
 import { Container, Total, CheckButton, CheckButtonText } from "./styles";
 
-export function CheckOutArea() {
+interface ITotal {
+  total: number;
+}
+
+export function CheckOutArea({ total }: ITotal) {
   return (
     <Container>
-      <Total>$ 1000.00</Total>
+      <Total>$ {total}</Total>
 
       <CheckButton>
         <CheckButtonText>Check out</CheckButtonText>
