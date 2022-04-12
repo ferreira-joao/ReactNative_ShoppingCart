@@ -29,6 +29,13 @@ export const ProductName = styled.Text`
   color: #000;
 `;
 
+export const ProductQuantity = styled.Text`
+  font-size: 15px;
+  flex-wrap: wrap;
+  font-family: ${theme.fonts.bold};
+  color: ${theme.colors.text};
+`;
+
 export const ProductPrice = styled.Text`
   font-size: 15px;
   flex-wrap: wrap;
