@@ -14,9 +14,10 @@ import {
 interface IShoppingCard {
   name: string;
   price: string;
+  quantity: number;
 }
 
-export function ShoppingCard({ name, price }: IShoppingCard) {
+export function ShoppingCard({ name, price, quantity }: IShoppingCard) {
   return (
     <Container>
       <ContainerData>
@@ -29,7 +30,7 @@ export function ShoppingCard({ name, price }: IShoppingCard) {
         </ContainerTexts>
       </ContainerData>
 
-      <QuantityCounter />
+      <QuantityCounter quantity={quantity} />
     </Container>
   );
 }

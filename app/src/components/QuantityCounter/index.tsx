@@ -4,7 +4,11 @@ import { Container, ActionButton, Counter } from "./styles";
 import Icon from "react-native-vector-icons/Ionicons";
 import { Alert } from "react-native";
 
-export function QuantityCounter() {
+interface ICounter {
+  quantity: number;
+}
+
+export function QuantityCounter({ quantity }: ICounter) {
   const [count, setCount] = useState(1);
 
   function handleAdd() {
@@ -25,7 +29,7 @@ export function QuantityCounter() {
         <Icon name="add-outline" size={30} color="#FFF" />
       </ActionButton>
 
-      <Counter>{count}</Counter>
+      <Counter>{quantity}</Counter>
 
       <ActionButton onPress={handleRemove}>
         <Icon name="remove-outline" size={30} color="#FFF" />

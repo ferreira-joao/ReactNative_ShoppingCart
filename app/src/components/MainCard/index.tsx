@@ -25,7 +25,9 @@ export function MainCard({ product, name, stock, price }: IMainCard) {
 
   function handleAdd() {
     if (!cart.includes(product)) {
-      setCart([...cart, product]);
+      const item_quantity = Object.assign(product, { quantity: 1 });
+
+      setCart([...cart, item_quantity]);
     }
   }
 
