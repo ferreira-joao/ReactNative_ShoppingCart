@@ -1,25 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 import { Container, ActionButton, Counter } from "./styles";
 import Icon from "react-native-vector-icons/Ionicons";
 import { Alert } from "react-native";
 
+import { ShoppingCartContext } from "../../contexts/ShoppingCartContext";
+
 interface ICounter {
+  id: number;
   quantity: number;
 }
 
-export function QuantityCounter({ quantity }: ICounter) {
+export function QuantityCounter({ id, quantity }: ICounter) {
   const [count, setCount] = useState(1);
 
+  const [cart, setCart] = useContext(ShoppingCartContext);
+
   function handleAdd() {
-    setCount(count + 1);
+    setCart(
+      cart.map((item: any) => {
+        if (item.id === id) {
+          return { ...item, quantity: item.quantity + 1 };
+        }
+        return item;
+      })
+    );
   }
 
   function handleRemove() {
-    if (count === 1) {
+    if (quantity === 1) {
       Alert.alert("Can't subtract.");
     } else {
-      setCount(count - 1);
+      setCart(
+        cart.map((item: any) => {
+          if (item.id === id) {
+            return { ...item, quantity: item.quantity - 1 };
+          }
+          return item;
+        })
+      );
     }
   }
 

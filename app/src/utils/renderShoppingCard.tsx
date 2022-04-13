@@ -9,6 +9,7 @@ interface IrenderMainCard {
 export function renderShoppingCard({ item }: IrenderMainCard) {
   return (
     <ShoppingCard
+      id={item.id}
       name={item.name}
       price={item.price}
       quantity={item.quantity}

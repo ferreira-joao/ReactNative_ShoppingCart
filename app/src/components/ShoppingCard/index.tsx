@@ -12,12 +12,13 @@ import {
 } from "./styles";
 
 interface IShoppingCard {
+  id: number;
   name: string;
   price: string;
   quantity: number;
 }
 
-export function ShoppingCard({ name, price, quantity }: IShoppingCard) {
+export function ShoppingCard({ id, name, price, quantity }: IShoppingCard) {
   return (
     <Container>
       <ContainerData>
@@ -30,7 +31,7 @@ export function ShoppingCard({ name, price, quantity }: IShoppingCard) {
         </ContainerTexts>
       </ContainerData>
 
-      <QuantityCounter quantity={quantity} />
+      <QuantityCounter id={id} quantity={quantity} />
     </Container>
   );
 }
