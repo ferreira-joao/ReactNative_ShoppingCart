@@ -39,7 +39,7 @@ export function ShoppingCartModal({ visible, onClose }: IShoppingCartModal) {
           showsVerticalScrollIndicator={false}
           contentContainerStyle={{ padding: 20 }}
           ListHeaderComponent={<ShoppingCartHeader onClose={onClose} />}
-          ListFooterComponent={<CleanButton />}
+          ListFooterComponent={cart.length > 0 && ((<CleanButton />) as any)}
         />
 
         <CheckOutArea total={total} />

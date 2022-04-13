@@ -31,6 +31,12 @@ export function Home() {
     handleShopCall();
   }, []);
 
+  useEffect(() => {
+    if (cart.length === 0) {
+      handleModal();
+    }
+  }, [cart]);
+
   function handleModal() {
     setVisible(!isVisible);
   }
