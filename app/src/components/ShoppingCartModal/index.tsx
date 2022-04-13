@@ -21,7 +21,8 @@ export function ShoppingCartModal({ visible, onClose }: IShoppingCartModal) {
 
   useEffect(() => {
     const sumTotal = cart.reduce(
-      (acc: any, obj: { price: any }) => acc + obj.price,
+      (acc: any, obj: { price: any; quantity: any }) =>
+        acc + obj.price * obj.quantity,
       0
     );
 

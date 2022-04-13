@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 
 import { Container, ActionButton, Counter } from "./styles";
 import Icon from "react-native-vector-icons/Ionicons";
@@ -12,15 +12,16 @@ interface ICounter {
 }
 
 export function QuantityCounter({ id, quantity }: ICounter) {
-  const [count, setCount] = useState(1);
-
   const [cart, setCart] = useContext(ShoppingCartContext);
 
   function handleAdd() {
     setCart(
       cart.map((item: any) => {
         if (item.id === id) {
-          return { ...item, quantity: item.quantity + 1 };
+          return {
+            ...item,
+            quantity: item.quantity + 1,
+          };
         }
         return item;
       })
