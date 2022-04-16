@@ -15,6 +15,7 @@ interface IrenderMainCard {
 export function renderMainCard({ item }: IrenderMainCard) {
   return (
     <MainCard
+      id={item.id}
       product={item}
       name={item.name}
       stock={item.stock}

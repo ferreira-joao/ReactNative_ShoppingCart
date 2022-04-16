@@ -14,17 +14,30 @@ import {
 } from "./styles";
 
 interface IMainCard {
+  id: number;
   product: {};
   name: string;
   stock: number;
   price: string;
 }
 
-export function MainCard({ product, name, stock, price }: IMainCard) {
+export function MainCard({ id, product, name, stock, price }: IMainCard) {
   const [cart, setCart] = useContext(ShoppingCartContext);
 
   function handleAdd() {
-    if (!cart.includes(product)) {
+    if (cart.some((prod: any) => prod.name === name)) {
+      setCart(
+        cart.map((item: any) => {
+          if (item.id === id) {
+            return {
+              ...item,
+              quantity: item.quantity + 1,
+            };
+          }
+          return item;
+        })
+      );
+    } else {
       const item_quantity = Object.assign(product, { quantity: 1 });
 
       setCart([...cart, item_quantity]);
