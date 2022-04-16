@@ -33,7 +33,7 @@ export function Home() {
 
   useEffect(() => {
     if (cart.length === 0) {
-      handleModal();
+      setVisible(false);
     }
   }, [cart]);
 
