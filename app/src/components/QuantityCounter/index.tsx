@@ -8,24 +8,29 @@ import { ShoppingCartContext } from "../../contexts/ShoppingCartContext";
 
 interface ICounter {
   id: number;
+  stock: number;
   quantity: number;
 }
 
-export function QuantityCounter({ id, quantity }: ICounter) {
+export function QuantityCounter({ id, stock, quantity }: ICounter) {
   const [cart, setCart] = useContext(ShoppingCartContext);
 
   function handleAdd() {
-    setCart(
-      cart.map((item: any) => {
-        if (item.id === id) {
-          return {
-            ...item,
-            quantity: item.quantity + 1,
-          };
-        }
-        return item;
-      })
-    );
+    if (quantity === stock) {
+      Alert.alert("Out of stock.");
+    } else {
+      setCart(
+        cart.map((item: any) => {
+          if (item.id === id) {
+            return {
+              ...item,
+              quantity: item.quantity + 1,
+            };
+          }
+          return item;
+        })
+      );
+    }
   }
 
   function handleRemove() {

@@ -15,10 +15,17 @@ interface IShoppingCard {
   id: number;
   name: string;
   price: string;
+  stock: number;
   quantity: number;
 }
 
-export function ShoppingCard({ id, name, price, quantity }: IShoppingCard) {
+export function ShoppingCard({
+  id,
+  name,
+  price,
+  stock,
+  quantity,
+}: IShoppingCard) {
   return (
     <Container>
       <ContainerData>
@@ -31,7 +38,7 @@ export function ShoppingCard({ id, name, price, quantity }: IShoppingCard) {
         </ContainerTexts>
       </ContainerData>
 
-      <QuantityCounter id={id} quantity={quantity} />
+      <QuantityCounter id={id} stock={stock} quantity={quantity} />
     </Container>
   );
 }
