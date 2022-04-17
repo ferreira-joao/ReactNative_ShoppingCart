@@ -35,7 +35,7 @@ export function QuantityCounter({ id, stock, quantity }: ICounter) {
 
   function handleRemove() {
     if (quantity === 1) {
-      Alert.alert("Can't subtract.");
+      setCart(cart.filter((item: any) => item.id !== id));
     } else {
       setCart(
         cart.map((item: any) => {
