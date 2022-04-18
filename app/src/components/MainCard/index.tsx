@@ -28,7 +28,7 @@ export function MainCard({ id, product, name, stock, price }: IMainCard) {
     if (cart.some((prod: any) => prod.name === name)) {
       setCart(
         cart.map((item: any) => {
-          if (item.id === id) {
+          if (item.id === id && item.stock > item.quantity) {
             return {
               ...item,
               quantity: item.quantity + 1,
